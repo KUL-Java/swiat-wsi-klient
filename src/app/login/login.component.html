@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>Logowanie</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="sendLoginRequest()">
+      <div class="fields">
+
+        <label for="login">Login</label>
+        <input placeholder="Login" class="form-control" type="text" id="login" formControlName="login"
+               [ngClass]="{'in-valid': !loginForm.controls['login'].valid
+             && loginForm.controls['login'].touched}">
+
+        <b class="incorrect-form"
+           *ngIf="!loginForm.controls['login'].valid && loginForm.controls['login'].touched">
+          Provide valid login </b>
+
+        <label for="password">Password</label>
+        <input placeholder="Password" class="form-control" type="password" id="password" formControlName="password"
+               [ngClass]="{'in-valid': !loginForm.controls['password'].valid
+             && loginForm.controls['password'].touched}">
+
+        <b class="incorrect-form"
+           *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched">
+          Provide valid password </b>
+      </div>
+      <span>
+            <button type="submit" class="btn btn-primary btn-lg form-button form-button-submit">Submit</button>
+      </span>
+    </form>
+  </div>
+</div>
+

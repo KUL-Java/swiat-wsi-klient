@@ -1,0 +1,12 @@
+.incorrect-form{
+  color: orangered;
+}
+
+.form-button{
+  width: 10rem;
+  margin: 0 5px;
+}
+
+.form-button-submit{
+  margin-left: 0;
+}

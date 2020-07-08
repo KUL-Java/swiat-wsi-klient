@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-flow: column wrap;
+}
+.fields{
+  display: flex;
+  flex-flow: column wrap;
+}
+.form-button{
+  margin: 5px 5px 5px 0;
+}
+.incorrect-form{
+  color: orangered;
+}

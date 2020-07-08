@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>Rejestracja</h1>
+    <form novalidate
+          [formGroup]="myform"
+          (ngSubmit)="onSubmit()"
+    >
+
+      <fieldset formGroupName="name">
+        <div>
+          <div class="form-group"
+               [ngClass]="{
+                            'has-danger': email.invalid && (email.dirty || email.touched),
+                            'has-success': email.valid && (email.dirty || email.touched)
+                          }">
+            <label for="exampleInputEmail">E-mail</label>
+            <input type="email" class="form-control" id="exampleInputEmail" formControlName="email" placeholder="E-mail"
+                   required>
+
+            <div class="form-control-feedback"
+                 *ngIf="email.errors && (email.dirty || email.touched)">
+              <p *ngIf="email.errors.required" class = 'incorrect-form'>Email is required</p>
+            </div>
+
+          </div>
+        </div>
+        <div>
+          <div class="form-group">
+            <label for="exampleInputNick">Nazwa Użytkownika</label>
+            <input type="text" class="form-control" id="exampleInputNick" formControlName="nickname"
+                   placeholder="Nazwa Użytkownika" required>
+            <div class="form-control-feedback"
+                 *ngIf="nickname.errors && (nickname.dirty || nickname.touched)">
+              <p *ngIf="nickname.errors.required" class = 'incorrect-form'>Nickname is required</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="form-group">
+            <label for="exampleInputPassword">Hasło</label>
+            <input type="password" class="form-control" id="exampleInputPassword" formControlName="password"
+                   placeholder="Hasło" required>
+            <div class="form-control-feedback"
+                 *ngIf="password.errors && (password.dirty || password.touched)">
+              <p *ngIf="password.errors.required" class = 'incorrect-form'>Password is required</p>
+            </div>
+          </div>
+        </div>
+
+        <span>
+            <button type="submit" class="btn btn-primary btn-lg form-button form-button-submit">Submit</button>
+        </span>
+        <span>
+            <button (click)="onClear()" class="btn btn-danger btn-lg form-button">Reset</button>
+        </span>
+
+
+      </fieldset>
+
+    </form>
+  </div>
+</div>
