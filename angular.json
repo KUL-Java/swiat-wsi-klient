@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "swiat-wsi-klient"
+    }
+  },
+  "defaultProject": "swiat-wsi-klient",
+  "cli": {
+    "analytics": false
+  }
 }
