@@ -1,25 +1,25 @@
 <div class="container">
   <div class="jumbotron">
     <h1>Rejestracja</h1>
-    <form novalidate
+    <form (ngSubmit)="onSubmit()"
           [formGroup]="myform"
-          (ngSubmit)="onSubmit()"
+          novalidate
     >
 
       <fieldset formGroupName="name">
         <div>
-          <div class="form-group"
-               [ngClass]="{
+          <div [ngClass]="{
                             'has-danger': email.invalid && (email.dirty || email.touched),
                             'has-success': email.valid && (email.dirty || email.touched)
-                          }">
+                          }"
+               class="form-group">
             <label for="exampleInputEmail">E-mail</label>
-            <input type="email" class="form-control" id="exampleInputEmail" formControlName="email" placeholder="E-mail"
-                   required>
+            <input class="form-control" formControlName="email" id="exampleInputEmail" placeholder="E-mail" required
+                   type="email">
 
-            <div class="form-control-feedback"
-                 *ngIf="email.errors && (email.dirty || email.touched)">
-              <p *ngIf="email.errors.required" class = 'incorrect-form'>Email is required</p>
+            <div *ngIf="email.errors && (email.dirty || email.touched)"
+                 class="form-control-feedback">
+              <p *ngIf="email.errors.required" class='incorrect-form'>Email is required</p>
             </div>
 
           </div>
@@ -27,33 +27,34 @@
         <div>
           <div class="form-group">
             <label for="exampleInputNick">Nazwa Użytkownika</label>
-            <input type="text" class="form-control" id="exampleInputNick" formControlName="nickname"
-                   placeholder="Nazwa Użytkownika" required>
-            <div class="form-control-feedback"
-                 *ngIf="nickname.errors && (nickname.dirty || nickname.touched)">
-              <p *ngIf="nickname.errors.required" class = 'incorrect-form'>Nickname is required</p>
+            <input class="form-control" formControlName="nickname" id="exampleInputNick" placeholder="Nazwa Użytkownika"
+                   required type="text">
+            <div *ngIf="nickname.errors && (nickname.dirty || nickname.touched)"
+                 class="form-control-feedback">
+              <p *ngIf="nickname.errors.required" class='incorrect-form'>Nickname is required</p>
             </div>
           </div>
         </div>
         <div>
           <div class="form-group">
             <label for="exampleInputPassword">Hasło</label>
-            <input type="password" class="form-control" id="exampleInputPassword" formControlName="password"
-                   placeholder="Hasło" required>
-            <div class="form-control-feedback"
-                 *ngIf="password.errors && (password.dirty || password.touched)">
-              <p *ngIf="password.errors.required" class = 'incorrect-form'>Password is required</p>
+            <input class="form-control" formControlName="password" id="exampleInputPassword" placeholder="Hasło"
+                   required type="password">
+            <div *ngIf="password.errors && (password.dirty || password.touched)"
+                 class="form-control-feedback">
+              <p *ngIf="password.errors.required" class='incorrect-form'>Password is required</p>
             </div>
           </div>
         </div>
-
+        <div class="buttons">
         <span>
-            <button type="submit" class="btn btn-primary btn-lg form-button form-button-submit">Submit</button>
+            <button class="button-accept btn btn-primary btn-lg form-button form-button-submit"
+                    type="submit">Submit</button>
         </span>
-        <span>
-            <button (click)="onClear()" class="btn btn-danger btn-lg form-button">Reset</button>
+          <span>
+            <button (click)="onClear()" class="button-cancel btn btn-danger btn-lg form-button">Reset</button>
         </span>
-
+        </div>
 
       </fieldset>
 

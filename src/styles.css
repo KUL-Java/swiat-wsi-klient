@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "northumbria-swiat-wsi";
+  src: url("/fonts/northumbria.otf");
+}
+
+.main-container {
+  font-family: northumbria-swiat-wsi, serif;
+}
+
+.main-component {
+  font-family: northumbria-swiat-wsi, serif;
+}
