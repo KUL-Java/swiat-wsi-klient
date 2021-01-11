@@ -26,7 +26,7 @@ export class AuthenticationService {
 
   login(username: string, password: string): Observable<void> {
     return this.http.post<any>(`${environment.apiUrl}/login`, {username, password})
-      .pipe(map(user => {
+      .pipe(map(() => {
         localStorage.setItem('user', JSON.stringify(window.btoa(username + ':' + password)));
       }));
   }
