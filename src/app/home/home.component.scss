@@ -1,0 +1,30 @@
+@import "../_shared/styles/variables";
+
+.main-container {
+  background-color: $background-color-brown;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  height: 100%;
+  width: 100%;
+}
+
+.left-content {
+  display: grid;
+  grid-template-rows: 1fr 1fr 7fr;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.right-content {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.header {
+  grid-row: 2;
+}
+
+.text {
+  grid-row: 3;
+}

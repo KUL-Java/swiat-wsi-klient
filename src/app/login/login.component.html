@@ -1,29 +1,30 @@
 <div class="container">
   <div class="jumbotron">
     <h1>Logowanie</h1>
-    <form [formGroup]="loginForm" (ngSubmit)="sendLoginRequest()">
+    <form (ngSubmit)="sendLoginRequest()" [formGroup]="loginForm">
       <div class="fields">
 
         <label for="login">Login</label>
-        <input placeholder="Login" class="form-control" type="text" id="login" formControlName="login"
-               [ngClass]="{'in-valid': !loginForm.controls['login'].valid
-             && loginForm.controls['login'].touched}">
+        <input [ngClass]="{'in-valid': !loginForm.controls['login'].valid
+             && loginForm.controls['login'].touched}" class="form-control" formControlName="login" id="login" placeholder="Login"
+               type="text">
 
-        <b class="incorrect-form"
-           *ngIf="!loginForm.controls['login'].valid && loginForm.controls['login'].touched">
+        <b *ngIf="!loginForm.controls['login'].valid && loginForm.controls['login'].touched"
+           class="incorrect-form">
           Provide valid login </b>
 
         <label for="password">Password</label>
-        <input placeholder="Password" class="form-control" type="password" id="password" formControlName="password"
-               [ngClass]="{'in-valid': !loginForm.controls['password'].valid
-             && loginForm.controls['password'].touched}">
+        <input [ngClass]="{'in-valid': !loginForm.controls['password'].valid
+             && loginForm.controls['password'].touched}" class="form-control" formControlName="password" id="password" placeholder="Password"
+               type="password">
 
-        <b class="incorrect-form"
-           *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched">
+        <b *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched"
+           class="incorrect-form">
           Provide valid password </b>
       </div>
       <span>
-            <button type="submit" class="btn btn-primary btn-lg form-button form-button-submit">Submit</button>
+            <button class="button-accept btn btn-primary btn-lg form-button form-button-submit"
+                    type="submit">Submit</button>
       </span>
     </form>
   </div>

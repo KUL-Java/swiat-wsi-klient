@@ -1,0 +1,32 @@
+@import "../_shared/styles/variables";
+
+.incorrect-form {
+  color: orangered;
+}
+
+.form-button {
+  width: 10rem;
+  margin: 0 5px;
+}
+
+.form-button-submit {
+  margin-left: 0;
+}
+
+.jumbotron {
+  background-color: $background-color-content;
+}
+
+.buttons {
+  margin-top: 1em;
+}
+
+.button-accept {
+  background-color: $button-accept;
+  border: 0;
+}
+
+.button-cancel {
+  background-color: $button-cancel;
+  border: 0;
+}
