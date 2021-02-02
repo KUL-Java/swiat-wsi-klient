@@ -11,6 +11,7 @@ import {SecuredComponent} from './secured/secured.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {BasicAuthInterceptor} from "./_shared/_helpers/basic-auth.interceptor";
 import {ErrorAuthInterceptor} from "./_shared/_helpers/error-auth.interceptor";
+import { VillageComponent } from './village/village.component';
 
 function ErrorInterceptor() {
 
@@ -23,7 +24,8 @@ function ErrorInterceptor() {
     LoginComponent,
     HomeComponent,
     RegistrationComponent,
-    SecuredComponent
+    SecuredComponent,
+    VillageComponent
   ],
   imports: [
     BrowserModule,
