@@ -15,7 +15,7 @@ export class BasicAuthInterceptor implements HttpInterceptor {
     if (isLoggedIn && isApiUrl) {
       request = request.clone({
         setHeaders: {
-          Authorization: `Basic ${user.authdata}`
+          Authorization: `Basic ${user}`
         }
       });
     }
